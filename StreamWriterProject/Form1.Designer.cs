@@ -90,6 +90,7 @@
             this.btnWriteOrWriteLine.TabIndex = 4;
             this.btnWriteOrWriteLine.Text = "Write Or WriteLine";
             this.btnWriteOrWriteLine.UseVisualStyleBackColor = true;
+            this.btnWriteOrWriteLine.Click += new System.EventHandler(this.btnWriteOrWriteLine_Click);
             // 
             // btnHelloWorld
             // 
@@ -111,6 +112,7 @@
             this.btnNumberList.TabIndex = 6;
             this.btnNumberList.Text = "Number List";
             this.btnNumberList.UseVisualStyleBackColor = true;
+            this.btnNumberList.Click += new System.EventHandler(this.btnNumberList_Click);
             // 
             // btnSaveFileDialog
             // 
@@ -121,6 +123,7 @@
             this.btnSaveFileDialog.TabIndex = 7;
             this.btnSaveFileDialog.Text = "Save File Dialog";
             this.btnSaveFileDialog.UseVisualStyleBackColor = true;
+            this.btnSaveFileDialog.Click += new System.EventHandler(this.btnSaveFileDialog_Click);
             // 
             // txtMessage
             // 

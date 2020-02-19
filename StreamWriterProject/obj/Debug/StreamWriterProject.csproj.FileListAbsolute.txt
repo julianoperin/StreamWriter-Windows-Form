@@ -7,3 +7,12 @@ C:\Users\julianoantonioperin\Desktop\StreamWriterProject\StreamWriterProject\obj
 C:\Users\julianoantonioperin\Desktop\StreamWriterProject\StreamWriterProject\obj\Debug\StreamWriterProject.csproj.GenerateResource.Cache
 C:\Users\julianoantonioperin\Desktop\StreamWriterProject\StreamWriterProject\obj\Debug\StreamWriterProject.exe
 C:\Users\julianoantonioperin\Desktop\StreamWriterProject\StreamWriterProject\obj\Debug\StreamWriterProject.pdb
+C:\Users\julia\Desktop\StreamWriter\StreamWriterProject\bin\Debug\StreamWriterProject.exe.config
+C:\Users\julia\Desktop\StreamWriter\StreamWriterProject\bin\Debug\StreamWriterProject.exe
+C:\Users\julia\Desktop\StreamWriter\StreamWriterProject\bin\Debug\StreamWriterProject.pdb
+C:\Users\julia\Desktop\StreamWriter\StreamWriterProject\obj\Debug\StreamWriterProject.csprojAssemblyReference.cache
+C:\Users\julia\Desktop\StreamWriter\StreamWriterProject\obj\Debug\StreamWriterProject.Form1.resources
+C:\Users\julia\Desktop\StreamWriter\StreamWriterProject\obj\Debug\StreamWriterProject.Properties.Resources.resources
+C:\Users\julia\Desktop\StreamWriter\StreamWriterProject\obj\Debug\StreamWriterProject.csproj.GenerateResource.cache
+C:\Users\julia\Desktop\StreamWriter\StreamWriterProject\obj\Debug\StreamWriterProject.exe
+C:\Users\julia\Desktop\StreamWriter\StreamWriterProject\obj\Debug\StreamWriterProject.pdb

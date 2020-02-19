@@ -17,17 +17,18 @@ namespace StreamWriterProject
         {
             InitializeComponent();
         }
-        // Declare a StreamWriter object with overwriting option
-        StreamWriter outFileA = new StreamWriter(@"U:\Data\AttendanceA.txt");
 
-        // Declare a StreamWriter object with appending option
-        StreamWriter outFile = new StreamWriter(@"U:\Data\Attendance.txt", true);
+        // Declare a StreamWriter object with OVERWRITING option
+        StreamWriter outFileA = new StreamWriter(@"D:\Data\AttendanceA.txt");
+
+        // Declare a StreamWriter object with APPENDING option
+        StreamWriter outFile = new StreamWriter(@"D:\Data\Attendance.txt", true);
         private void btnAttemdamce_Click(object sender, EventArgs e)
         {
             //If outFile is closed, renew it.
             if (outFile.BaseStream == null)
             {
-                outFile = File.AppendText(@"U:\Data\Attendance.txt");
+                outFile = File.AppendText(@"D:\Data\Attendance.txt");
             }
             try
             {
@@ -43,31 +44,12 @@ namespace StreamWriterProject
                 MessageBox.Show(ex.Message);
             }
             //outFileA = File.CreateText(@":U\Data\AttendanceA.txt");
-            ////"U:\Data\AttendanceA.txt" is a string literal
-            ////@"W:\Data\AttendanceA.txt" verbatim string
-            //outFile = File.AppendText(@"U:\Data\Attendance.txt");
+            ////"D:\Data\AttendanceA.txt" is a string literal
+            ////@"D:\Data\AttendanceA.txt" verbatim string
+            //outFile = File.AppendText(@"D:\Data\Attendance.txt");
         }
 
-        private void btnHelloWorld_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                // StreamWriter outHelloFile = new StreamWriter(@":U\Data\AttendanceA.txt");
-                StreamWriter outHelloFile;
-                outHelloFile = File.AppendText(@":U\Data\AttendanceA.txt");
-                outHelloFile.Write("Hello World!");
-                outHelloFile.Close();
-                MessageBox.Show(@"The file U:\Data\HelloWorld.txt is saved.");
-
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
-
-        }
-
+        // BTN Done with Attendance
         private void btnDoneWithAttendance_Click(object sender, EventArgs e)
         {
             try
@@ -77,6 +59,92 @@ namespace StreamWriterProject
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        // BTN Hello World
+        private void btnHelloWorld_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // StreamWriter outHelloFile = new StreamWriter(@":U\Data\AttendanceA.txt");
+                StreamWriter outHelloFile;
+                outHelloFile = File.AppendText(@":D\Data\HelloWorld.txt");
+                outHelloFile.Write("Hello World!");
+                outHelloFile.Close();
+                MessageBox.Show(@"The file D:\Data\HelloWorld.txt is saved.");
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+
+        // BTN write line 
+        private void btnWriteOrWriteLine_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                StreamWriter outFile = new StreamWriter(@"D:\Data\Test.txt");
+                //StreamWriter outFile;
+                //outFile = File.CreateText(@"U:\Data\Test.txt");
+                outFile.WriteLine("Line one.");
+                outFile.Write("Line Two.");
+                outFile.WriteLine("Line two continued.");
+                outFile.Write("Last Line.");
+                outFile.WriteLine("Line line continued.");
+                outFile.Write("Actually, this is the Last Line.");
+                outFile.Close();
+            }
+            catch (EncoderFallbackException exEnc)
+            {
+                MessageBox.Show(exEnc.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        // BTN Number list
+        private void btnNumberList_Click(object sender, EventArgs e)
+        {
+            StreamWriter numberList;
+            numberList = File.CreateText(@"D:\DataNumberlist.txt");
+            for (int x = 0; x <= 100; x++)
+            {
+                numberList.WriteLine(x.ToString());
+                numberList.Write(x.ToString() + Environment.NewLine);
+                numberList.Close();
+                MessageBox.Show(@"Text file numberlist.txt is created in D:\Data folder.");
+            }
+        }
+
+        private void btnSaveFileDialog_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sd = new SaveFileDialog();
+            sd.Title = "Chose a path and type the file name.";
+            sd.InitialDirectory = @"U:\data";
+            sd.FileName = @"U:\data\newfile.txt"; // if suggesting a file name
+            sd.Filter = "text files(*.txt)|*.txt|Add files(*.*)|*.*";
+            DialogResult x = sd.ShowDialog();
+            if (x == DialogResult.OK)
+            {
+                try
+                {
+                    StreamWriter sw = new StreamWriter(sd.FileName);
+                    sw.Write(txtMessage.Text);
+                    sw.Close();
+                    MessageBox.Show(sd.FileName + " has been saved.");
+                } 
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
     }
