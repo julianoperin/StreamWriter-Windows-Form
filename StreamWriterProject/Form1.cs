@@ -124,29 +124,33 @@ namespace StreamWriterProject
             }
         }
 
-        private void btnSaveFileDialog_Click(object sender, EventArgs e)
-        {
-            SaveFileDialog sd = new SaveFileDialog();
-            sd.Title = "Chose a path and type the file name.";
-            sd.InitialDirectory = @"U:\data";
-            sd.FileName = @"U:\data\newfile.txt"; // if suggesting a file name
-            sd.Filter = "text files(*.txt)|*.txt|Add files(*.*)|*.*";
-            DialogResult x = sd.ShowDialog();
-            if (x == DialogResult.OK)
-            {
-                try
-                {
-                    StreamWriter sw = new StreamWriter(sd.FileName);
-                    sw.Write(txtMessage.Text);
-                    sw.Close();
-                    MessageBox.Show(sd.FileName + " has been saved.");
-                } 
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-        }
+        /*
+          private void btnSaveFileDialog_Click(object sender, EventArgs e)
+         {
+             SaveFileDialog sd = new SaveFileDialog();
+             sd.Title = "Chose a path and type the file name.";
+             sd.InitialDirectory = @"U:\data";
+             sd.FileName = @"U:\data\newfile.txt"; // if suggesting a file name
+             sd.Filter = "text files(*.txt)|*.txt|Add files(*.*)|*.*";
+             DialogResult x = sd.ShowDialog();
+             if (x == DialogResult.OK)
+             {
+                 try
+                 {
+                     StreamWriter sw = new StreamWriter(sd.FileName);
+                     sw.Write(txtMessage.Text);
+                     sw.Close();
+                     MessageBox.Show(sd.FileName + " has been saved.");
+                 } 
+                 catch (Exception ex)
+                 {
+                     MessageBox.Show(ex.Message);
+                 }
+             }
+         }
+
+         */
+
     }
 }
 
